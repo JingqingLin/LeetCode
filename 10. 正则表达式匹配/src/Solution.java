@@ -6,7 +6,7 @@ public class Solution {
             return s.isEmpty();
         }
 
-        // p 的匹配模式有两种 1. 单字符 a/b/c/.../. 2. 双字符 a*/b*/c*.../.*
+        // p 的匹配模式有两种 1. 单字符 ./a/b/c/... 2. 双字符 a*/b*/c*.../.*
         boolean first_match = (!s.isEmpty() && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.'));
 
         // p 下个字符为 * ，因此 p 中 a*/b*/c*.../.* 为当前匹配
