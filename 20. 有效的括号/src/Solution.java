@@ -2,10 +2,16 @@ import java.util.Stack;
 
 public class Solution {
     public static boolean isValid(String s) {
+        if (s.length()%2 != 0) {
+            return false;
+        }
         Stack<Character> symbol = new Stack<>();
         String in = "({[";
         String out = ")}]";
         for (int i = 0; i < s.length(); i++) {
+            if (symbol.size() > s.length()/2) {
+                return false;
+            }
             if (in.contains(String.valueOf(s.charAt(i)))) {
                 symbol.push(s.charAt(i));
             }

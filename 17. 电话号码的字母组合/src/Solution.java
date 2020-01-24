@@ -25,7 +25,7 @@ public class Solution {
     private static List<String> addButton(int index, String subString, List<String> list, HashMap<Character, String> map) {
         List<String> newList = new ArrayList<>();
         String temp;
-        // temp 存储每个拨号键对应的字符串
+        // temp 存储传入index（拨号键）对应的字符串
         if (map.get(subString.charAt(index)) != null) {
             temp = map.get(subString.charAt(index));
         }
