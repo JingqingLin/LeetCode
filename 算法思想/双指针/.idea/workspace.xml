@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4f81432-7565-4e8f-bf24-2e27cb954e40" name="Default Changelist" comment="" />
+    <list default="true" id="f4f81432-7565-4e8f-bf24-2e27cb954e40" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/345. 反转字符串中的元音字母/345. 反转字符串中的元音字母.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/345. 反转字符串中的元音字母/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +20,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1XA11k2AcOJnOqy2T33ts9e3sMi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,6 +32,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -29,10 +40,17 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Application.Solution (1)">
+  <component name="RunManager" selected="Application.Solution (2)">
     <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Solution" />
       <module name="633. 平方数之和" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Solution" />
+      <module name="345. 反转字符串中的元音字母" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -46,6 +64,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution (2)" />
         <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.Solution" />
       </list>
@@ -61,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580473871994</updated>
-      <workItem from="1580473874734" duration="937000" />
+      <workItem from="1580473874734" duration="4162000" />
     </task>
     <servers />
   </component>
@@ -73,25 +92,41 @@
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="233" y="42" key="#Project_Structure/0.0.1280.760@0.0.1280.760" timestamp="1580473892871" />
-    <state width="1238" height="190" key="GridCell.Tab.0.bottom" timestamp="1580474548382">
+    <state width="1238" height="190" key="GridCell.Tab.0.bottom" timestamp="1580478166356">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1238" height="190" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1580474548382" />
-    <state width="1238" height="190" key="GridCell.Tab.0.center" timestamp="1580474548382">
+    <state width="1238" height="190" key="GridCell.Tab.0.bottom/0.0.1280.760@0.0.1280.760" timestamp="1580478166356" />
+    <state width="1238" height="190" key="GridCell.Tab.0.center" timestamp="1580478166356">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1238" height="190" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1580474548382" />
-    <state width="1238" height="190" key="GridCell.Tab.0.left" timestamp="1580474548382">
+    <state width="1238" height="190" key="GridCell.Tab.0.center/0.0.1280.760@0.0.1280.760" timestamp="1580478166356" />
+    <state width="1238" height="190" key="GridCell.Tab.0.left" timestamp="1580478166356">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1238" height="190" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1580474548382" />
-    <state width="1238" height="190" key="GridCell.Tab.0.right" timestamp="1580474548382">
+    <state width="1238" height="190" key="GridCell.Tab.0.left/0.0.1280.760@0.0.1280.760" timestamp="1580478166356" />
+    <state width="1238" height="190" key="GridCell.Tab.0.right" timestamp="1580478166356">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state width="1238" height="190" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1580474548382" />
-    <state x="6" y="0" key="new project wizard" timestamp="1580473924198">
+    <state width="1238" height="190" key="GridCell.Tab.0.right/0.0.1280.760@0.0.1280.760" timestamp="1580478166356" />
+    <state width="1238" height="236" key="GridCell.Tab.1.bottom" timestamp="1580477330176">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
-    <state x="6" y="0" key="new project wizard/0.0.1280.760@0.0.1280.760" timestamp="1580473924198" />
+    <state width="1238" height="236" key="GridCell.Tab.1.bottom/0.0.1280.760@0.0.1280.760" timestamp="1580477330176" />
+    <state width="1238" height="236" key="GridCell.Tab.1.center" timestamp="1580477330176">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1238" height="236" key="GridCell.Tab.1.center/0.0.1280.760@0.0.1280.760" timestamp="1580477330176" />
+    <state width="1238" height="236" key="GridCell.Tab.1.left" timestamp="1580477330176">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1238" height="236" key="GridCell.Tab.1.left/0.0.1280.760@0.0.1280.760" timestamp="1580477330176" />
+    <state width="1238" height="236" key="GridCell.Tab.1.right" timestamp="1580477330176">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state width="1238" height="236" key="GridCell.Tab.1.right/0.0.1280.760@0.0.1280.760" timestamp="1580477330176" />
+    <state x="6" y="0" key="new project wizard" timestamp="1580475162317">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="6" y="0" key="new project wizard/0.0.1280.760@0.0.1280.760" timestamp="1580475162317" />
   </component>
 </project>
