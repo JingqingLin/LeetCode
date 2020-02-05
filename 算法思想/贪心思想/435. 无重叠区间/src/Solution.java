@@ -1,5 +1,6 @@
 import java.util.*;
 
+// 从终点的贪心
 public class Solution {
     public static int eraseOverlapIntervals(int[][] intervals) {
         if (intervals.length == 0) {
