@@ -13,9 +13,12 @@
     'use strict';
     var css = [
         ".blob-code-inner {",
-        "font-family: Cascadia Code;",
-        "font-size: 14px;",
-        "font-weight: 400;",
+        "font-family: Cascadia Code !important;",
+        "font-size: 14px !important;",
+        "}",
+        ".CodeMirror-lines {",
+        "font-family: Cascadia Code !important;",
+        "font-size: 14px !important;",
         "}",
 ].join("\n");
 if (typeof GM_addStyle != "undefined") {
