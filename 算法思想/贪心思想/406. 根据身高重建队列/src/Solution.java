@@ -19,6 +19,8 @@ public class Solution {
         for (int[] i : people) {
             list.add(i[1], i);
         }
+        // 第 1 个维度为什么可以填 0
+        // 因为传入数组的长度小于 list.size 时，默认使用 size 作为数组复制的长度
         return list.toArray(new int[0][]);
     }
 
