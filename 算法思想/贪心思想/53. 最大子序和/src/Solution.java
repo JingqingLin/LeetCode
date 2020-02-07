@@ -3,17 +3,17 @@ public class Solution {
         if (nums.length == 1) {
             return nums[0];
         }
-        int last = nums[0];
-        int maxSum = last;
+        int preSum = nums[0];
+        int maxSum = preSum;
         for (int i = 1; i < nums.length; i++) {
-            if (last <= 0) {
-                last = nums[i];
+            if (preSum <= 0) {
+                preSum = nums[i];
             }
             else {
-//                last = Math.max(0, last + nums[i]);
-                last = last + nums[i];
+//                preSum = Math.max(0, preSum + nums[i]);
+                preSum = preSum + nums[i];
             }
-            maxSum = Math.max(maxSum, last);
+            maxSum = Math.max(maxSum, preSum);
         }
         return maxSum;
     }
