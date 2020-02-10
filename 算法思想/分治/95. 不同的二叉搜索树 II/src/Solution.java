@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class Solution {
     public static class TreeNode {
@@ -16,8 +18,7 @@ public class Solution {
         if (n == 0) {
             return treeNodeList;
         }
-        treeNodeList = generateTrees(1, n);
-        return treeNodeList;
+        return generateTrees(1, n);
     }
 
     private static List<TreeNode> generateTrees(int start, int end) {
@@ -47,6 +48,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-
+        List<TreeNode> treeNodeList = generateTrees(3);
     }
 }
