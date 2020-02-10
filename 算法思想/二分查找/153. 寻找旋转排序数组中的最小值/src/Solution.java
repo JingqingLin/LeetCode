@@ -6,14 +6,14 @@ public class Solution {
             int m = l + (r - l) / 2;
             if (nums[m] >= nums[0]) {
                 l = m + 1;
-            }
-            else {
+            } else {
                 r = m - 1;
             }
         }
         return nums[(r + 1) % len];
     }
+
     public static void main(String[] args) {
-        System.out.println(findMin(new int[]{1, 2 ,3}));
+        System.out.println(findMin(new int[]{1, 2, 3}));
     }
 }

@@ -2,14 +2,14 @@ import java.util.Stack;
 
 public class Solution {
     public static boolean isValid(String s) {
-        if (s.length()%2 != 0) {
+        if (s.length() % 2 != 0) {
             return false;
         }
         Stack<Character> symbol = new Stack<>();
         String in = "({[";
         String out = ")}]";
         for (int i = 0; i < s.length(); i++) {
-            if (symbol.size() > s.length()/2) {
+            if (symbol.size() > s.length() / 2) {
                 return false;
             }
             if (in.contains(String.valueOf(s.charAt(i)))) {
@@ -19,11 +19,9 @@ public class Solution {
             else if (out.contains(String.valueOf(s.charAt(i)))) {
                 if (symbol.isEmpty()) {
                     return false;
-                }
-                else if (in.indexOf(symbol.peek()) == out.indexOf(s.charAt(i))) {
+                } else if (in.indexOf(symbol.peek()) == out.indexOf(s.charAt(i))) {
                     symbol.pop();
-                }
-                else {
+                } else {
                     return false;
                 }
             }
@@ -37,8 +35,9 @@ public class Solution {
 //        }
 //        return s.length() == 0;
     }
-    public static void main(String []args) {
-        long  startTime = System.currentTimeMillis();
+
+    public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
         System.out.println(isValid("(((((((((((((({(((())))})))))))))"));
         long endTime = System.currentTimeMillis();
         System.out.println("程序运行时间：" + (endTime - startTime) + "ms");

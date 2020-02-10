@@ -9,13 +9,13 @@ public class Solution {
             if (g[p] <= s[q]) {
                 p++;
                 q++;
-            }
-            else {
+            } else {
                 q++;
             }
         }
         return p;
     }
+
     public static void main(String[] args) {
         System.out.println(findContentChildren(new int[]{10, 9, 8, 7}, new int[]{5, 6, 7, 8}));
     }

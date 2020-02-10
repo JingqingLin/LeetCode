@@ -13,8 +13,7 @@ public class Solution {
             int m = l + (r - l) / 2;
             if (nums[m] < target) {
                 l = m + 1;
-            }
-            else {
+            } else {
                 r = m;
             }
         }
@@ -37,7 +36,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int [] result = searchRange(new int[]{1,2,3,3,4,4,6,6,9,9}, 5);
+        int[] result = searchRange(new int[]{1, 2, 3, 3, 4, 4, 6, 6, 9, 9}, 5);
         System.out.println(Arrays.toString(result));
     }
 }

@@ -21,7 +21,8 @@ public class Solution {
             return first_match && isMatch(s.substring(1), p.substring(1));
         }
     }
-    public static void main(String []args) {
+
+    public static void main(String[] args) {
         System.out.println(isMatch("aabb", ".*b"));
     }
 }

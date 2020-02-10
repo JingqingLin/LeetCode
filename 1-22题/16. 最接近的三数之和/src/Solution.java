@@ -8,7 +8,7 @@ public class Solution {
         Arrays.sort(nums);
         int minDifference = Integer.MAX_VALUE;
         int result = target;
-        for (int i = 0; i < nums.length-2; i++) {
+        for (int i = 0; i < nums.length - 2; i++) {
             int l = i + 1, r = nums.length - 1;
             while (l < r) {
 //                System.out.println(minDifference);
@@ -19,19 +19,18 @@ public class Solution {
 
                 if (nums[i] + nums[l] + nums[r] < target) {
                     l++;
-                }
-                else if (nums[i] + nums[l] + nums[r] > target) {
+                } else if (nums[i] + nums[l] + nums[r] > target) {
                     r--;
-                }
-                else {
+                } else {
                     return target;
                 }
             }
         }
         return result;
     }
-    public static void main(String []args) {
-        System.out.println(threeSumClosest(new int[]{1,2,4,8,16,32,64,128},82));
+
+    public static void main(String[] args) {
+        System.out.println(threeSumClosest(new int[]{1, 2, 4, 8, 16, 32, 64, 128}, 82));
         // -4 -1 1 2
     }
 }

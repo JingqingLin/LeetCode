@@ -1,10 +1,9 @@
 public class Solution {
     public static String convert(String s, int numRows) {
-        if(numRows == 1) {
+        if (numRows == 1) {
             return s;
-        }
-        else {
-            StringBuilder []temp = new StringBuilder[numRows];
+        } else {
+            StringBuilder[] temp = new StringBuilder[numRows];
             for (int i = 0; i < numRows; i++) {
                 temp[i] = new StringBuilder();
             }
@@ -13,7 +12,7 @@ public class Solution {
             for (int j = 0; j < gap; j++) {
                 int count = 0;
                 for (int i = 0; i < s.length(); i++) {
-                    if (i%gap == j) {
+                    if (i % gap == j) {
                         // 先插入竖直位置的字母
                         if (j < numRows) {
                             temp[j].insert(i / gap, s.charAt(i));
@@ -33,7 +32,8 @@ public class Solution {
             return String.valueOf(result);
         }
     }
-    public static void main(String []args) {
+
+    public static void main(String[] args) {
         System.out.println(convert("LEETCODEISHIRING", 3));
     }
 }

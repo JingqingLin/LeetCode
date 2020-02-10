@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 // 注意条件：字典序
@@ -11,9 +10,9 @@ public class Solution {
             int p = 0, q = 0;
             while (q < dicStr.length() && p < s.length() && maxLen <= dicStr.length()) {
                 if (dicStr.charAt(q) == s.charAt(p)) {
-                    p++;q++;
-                }
-                else {
+                    p++;
+                    q++;
+                } else {
                     p++;
                 }
             }
@@ -25,6 +24,7 @@ public class Solution {
         }
         return result;
     }
+
     public static void main(String[] args) {
         List<String> d = new ArrayList<>();
         d.add("ba");

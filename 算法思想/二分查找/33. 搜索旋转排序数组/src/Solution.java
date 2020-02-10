@@ -10,8 +10,7 @@ public class Solution {
             int m = l + (r - l) / 2;
             if (nums[m] > nums[r]) {
                 l = m + 1;
-            }
-            else {
+            } else {
                 r = m;
             }
         }
@@ -19,8 +18,7 @@ public class Solution {
         if (nums[len - 1] >= target) {
             l = r;
             r = len - 1;
-        }
-        else {
+        } else {
             l = 0;
             r--;
         }
@@ -32,13 +30,13 @@ public class Solution {
             }
             if (nums[m] > target) {
                 r = m - 1;
-            }
-            else {
+            } else {
                 l = m + 1;
             }
         }
         return -1;
     }
+
     public static void main(String[] args) {
         System.out.println(search(new int[]{3, 4, 5, 6, 1, 2}, 2));
     }

@@ -8,8 +8,7 @@ public class Solution {
         for (int i = 1; i < nums.length; i++) {
             if (preSum <= 0) {
                 preSum = nums[i];
-            }
-            else {
+            } else {
 //                preSum = Math.max(0, preSum + nums[i]);
                 preSum = preSum + nums[i];
             }
@@ -17,6 +16,7 @@ public class Solution {
         }
         return maxSum;
     }
+
     public static void main(String[] args) {
         System.out.println(maxSubArray(new int[]{-1, 3, 4, -2, 3, 2, -3, 4}));
     }

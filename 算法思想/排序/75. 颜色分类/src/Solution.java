@@ -4,11 +4,9 @@ public class Solution {
         while (one < two) {
             if (nums[one] == 0) {
                 swap(nums, ++zero, one++);
-            }
-            else if (nums[one] == 2) {
+            } else if (nums[one] == 2) {
                 swap(nums, --two, one);
-            }
-            else {
+            } else {
                 ++one;
             }
         }

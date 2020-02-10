@@ -20,6 +20,7 @@ public class Solution {
         }
         return partitionList;
     }
+
     public static void main(String[] args) {
         System.out.println(partitionLabels("ababcbacacdefegdehihklij"));
     }

@@ -10,8 +10,7 @@ public class Solution {
             if (' ' == str.charAt(i)) {
                 flagPre = flag;
                 flag = false;
-            }
-            else {
+            } else {
                 flagPre = flag;
                 flag = true;
             }
@@ -21,14 +20,13 @@ public class Solution {
                     if ('-' == str.charAt(i)) {
                         isMinus = true;
                         continue;
-                    }
-                    else if ('+' == str.charAt(i)) {
+                    } else if ('+' == str.charAt(i)) {
                         continue;
                     }
                 }
 
                 // 遇到其他字符，break 并输出之前的整数
-                if (str.charAt(i)-'0' > 9 || str.charAt(i)-'0' < 0) {
+                if (str.charAt(i) - '0' > 9 || str.charAt(i) - '0' < 0) {
                     break;
                 }
 
@@ -36,8 +34,7 @@ public class Solution {
                 if (result > 2147483647) {
                     if (isMinus) {
                         return -2147483648;
-                    }
-                    else {
+                    } else {
                         return 2147483647;
                     }
                 }
@@ -52,7 +49,8 @@ public class Solution {
         }
         return (int) result;
     }
-    public static void main(String []args) {
+
+    public static void main(String[] args) {
         System.out.println(myAtoi(" -987a.3"));
     }
 }

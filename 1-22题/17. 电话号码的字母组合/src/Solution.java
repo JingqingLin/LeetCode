@@ -22,14 +22,14 @@ public class Solution {
         list.add("");
         return addButton(0, digits, list, buttonMap);
     }
+
     private static List<String> addButton(int index, String subString, List<String> list, HashMap<Character, String> map) {
         List<String> newList = new ArrayList<>();
         String temp;
         // temp 存储传入index（拨号键）对应的字符串
         if (map.get(subString.charAt(index)) != null) {
             temp = map.get(subString.charAt(index));
-        }
-        else {
+        } else {
             throw new IllegalArgumentException();
         }
         for (int i = 0; i < temp.length(); i++) {
@@ -39,12 +39,13 @@ public class Solution {
                 newList.add(str);
             }
         }
-        if (index == subString.length()-1) {
+        if (index == subString.length() - 1) {
             return newList;
         }
         return addButton(index + 1, subString, newList, map);
     }
-    public static void main(String []args) {
+
+    public static void main(String[] args) {
         System.out.println(letterCombinations("2"));
     }
 }

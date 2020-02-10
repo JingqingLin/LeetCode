@@ -8,7 +8,7 @@ public class Solution {
         if (l == r || l == r + 1) {
             return true;
         }
-        int newl = l, newr = r-1;
+        int newl = l, newr = r - 1;
         l++;
         while (s.charAt(l) == s.charAt(r) && l < r) {
             l++;

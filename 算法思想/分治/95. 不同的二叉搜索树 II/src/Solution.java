@@ -1,18 +1,7 @@
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     public static List<TreeNode> generateTrees(int n) {
         List<TreeNode> treeNodeList = new ArrayList<>();
         if (n == 0) {
@@ -49,5 +38,15 @@ public class Solution {
 
     public static void main(String[] args) {
         List<TreeNode> treeNodeList = generateTrees(3);
+    }
+
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 }

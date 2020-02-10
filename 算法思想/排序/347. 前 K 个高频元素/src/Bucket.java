@@ -31,7 +31,7 @@ public class Bucket {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = topKFrequent(new int[]{4,1,-1,2,-1,2,3}, 2);
+        List<Integer> list = topKFrequent(new int[]{4, 1, -1, 2, -1, 2, 3}, 2);
         for (Integer i : list) {
             System.out.println(i);
         }

@@ -1,11 +1,4 @@
 public class Solution {
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-        }
-    }
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null && l2 == null) {
             return l1;
@@ -18,8 +11,7 @@ public class Solution {
                 l3.next = new ListNode(l1.val);
                 l3 = l3.next;
                 l1 = l1.next;
-            }
-            else {
+            } else {
                 l3.next = new ListNode(l2.val);
                 l3 = l3.next;
                 l2 = l2.next;
@@ -27,12 +19,12 @@ public class Solution {
         }
         if (l1 == null) {
             l3.next = l2;
-        }
-        else {
+        } else {
             l3.next = l1;
         }
         return l4.next;
     }
+
     public static void main(String[] args) {
         ListNode l1 = new ListNode(2);
         l1.next = new ListNode(6);
@@ -40,12 +32,21 @@ public class Solution {
 //        l1.next.next.next = new ListNode(0);
         ListNode l2 = new ListNode(3);
         l2.next = new ListNode(4);
-       l2.next.next = new ListNode(8);
+        l2.next.next = new ListNode(8);
 //        l2.next.next.next = new ListNode(4);
         ListNode lSum = mergeTwoLists(l1, l2);
         while (lSum != null) {
             System.out.println(lSum.val);
             lSum = lSum.next;
+        }
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
         }
     }
 }

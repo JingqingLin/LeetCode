@@ -9,6 +9,7 @@ public class Solution {
         }
         return true;
     }
+
     public static void main(String[] args) {
         System.out.println(isSubsequence("", "ddd"));
     }

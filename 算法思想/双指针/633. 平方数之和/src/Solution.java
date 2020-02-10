@@ -3,19 +3,18 @@ public class Solution {
         int sqrtNum = (int) Math.sqrt(c);
         int l = 0, r = sqrtNum;
         while (l <= r) {
-            int sum = l*l + r*r;
+            int sum = l * l + r * r;
             if (sum == c) {
                 return true;
-            }
-            else if (sum > c) {
+            } else if (sum > c) {
                 r--;
-            }
-            else {
+            } else {
                 l++;
             }
         }
         return false;
     }
+
     public static void main(String[] args) {
         System.out.println(judgeSquareSum(4));
     }

@@ -7,8 +7,7 @@ public class Solution {
             int diff = letters[m] - target;
             if (diff <= 0) {
                 l = m + 1;
-            }
-            else {
+            } else {
                 r = m - 1;
             }
         }

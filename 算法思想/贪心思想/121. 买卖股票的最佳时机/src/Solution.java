@@ -8,8 +8,7 @@ public class Solution {
         for (int i = 1; i < prices.length; i++) {
             if (minPriceBefore > prices[i]) {
                 minPriceBefore = prices[i];
-            }
-            else {
+            } else {
                 maxPro = Math.max(maxPro, prices[i] - minPriceBefore);
             }
         }

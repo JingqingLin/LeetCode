@@ -11,7 +11,8 @@ public class Solution {
         }
         return result;
     }
-    public static void main(String []args) {
+
+    public static void main(String[] args) {
         System.out.println(reverse(2147483642
         ));
     }

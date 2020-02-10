@@ -1,27 +1,26 @@
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class Solution {
     public static String intToRoman(int num) {
         LinkedHashMap<Integer, String> romanMap = new LinkedHashMap<>();
-        romanMap.put(1000,"M");
-        romanMap.put(900,"CM");
-        romanMap.put(500,"D");
-        romanMap.put(400,"CD");
-        romanMap.put(100,"C");
-        romanMap.put(90,"XC");
-        romanMap.put(50,"L");
-        romanMap.put(40,"XL");
-        romanMap.put(10,"X");
-        romanMap.put(9,"IX");
-        romanMap.put(5,"V");
-        romanMap.put(4,"IV");
-        romanMap.put(1,"I");
+        romanMap.put(1000, "M");
+        romanMap.put(900, "CM");
+        romanMap.put(500, "D");
+        romanMap.put(400, "CD");
+        romanMap.put(100, "C");
+        romanMap.put(90, "XC");
+        romanMap.put(50, "L");
+        romanMap.put(40, "XL");
+        romanMap.put(10, "X");
+        romanMap.put(9, "IX");
+        romanMap.put(5, "V");
+        romanMap.put(4, "IV");
+        romanMap.put(1, "I");
         String romanNumerals = "";
         for (Integer key : romanMap.keySet()) {
             int count = 0;
-            if (num/key != 0) {
-                count = num/key;
+            if (num / key != 0) {
+                count = num / key;
                 num = num % key;
                 for (int i = 0; i < count; i++) {
                     romanNumerals += romanMap.get(key);
@@ -58,7 +57,8 @@ public class Solution {
 //        }
         return romanNumerals;
     }
-    public static void main(String []args) {
+
+    public static void main(String[] args) {
         System.out.println(intToRoman(1994));
     }
 }

@@ -1,15 +1,4 @@
-import java.util.List;
-
 public class Solution {
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-
     public static boolean hasCycle(ListNode head) {
         ListNode slow = head, fast = head == null ? null : head.next;
         if (slow == null || fast == null) {
@@ -35,5 +24,15 @@ public class Solution {
 //        head.next.next.next = new ListNode(4);
 //        head.next.next.next.next = head;
         System.out.println(hasCycle(head));
+    }
+
+    static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
     }
 }

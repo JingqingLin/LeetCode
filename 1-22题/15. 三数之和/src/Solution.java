@@ -19,39 +19,40 @@ public class Solution {
 
                 List<Integer> temp = new ArrayList<>();
                 if (nums[i] + nums[l] + nums[r] == 0) {
-                    temp.add(nums[i]);temp.add(nums[l]);temp.add(nums[r]);
+                    temp.add(nums[i]);
+                    temp.add(nums[l]);
+                    temp.add(nums[r]);
                     result.add(temp);
                     if (nums[l] == nums[r]) {
                         break;
-                    }
-                    else {
-                        l++;r--;
-                        while (l < r && nums[l] == nums[l-1]) {
+                    } else {
+                        l++;
+                        r--;
+                        while (l < r && nums[l] == nums[l - 1]) {
                             l++;
                         }
-                        while (l < r && nums[r] == nums[r+1]) {
+                        while (l < r && nums[r] == nums[r + 1]) {
                             r--;
                         }
                     }
-                }
-                else if (nums[i] + nums[l] + nums[r] > 0) {
+                } else if (nums[i] + nums[l] + nums[r] > 0) {
                     r--;
-                }
-                else {
+                } else {
                     l++;
                 }
             }
-            while (nums[i] == nums[i+1]) {
+            while (nums[i] == nums[i + 1]) {
                 i++;
-                if (i == nums.length-1) {
+                if (i == nums.length - 1) {
                     break;
                 }
             }
         }
         return result;
     }
-    public static void main(String []args) {
-        List<List<Integer>> print = threeSum(new int[]{-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6});
+
+    public static void main(String[] args) {
+        List<List<Integer>> print = threeSum(new int[]{-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6});
         // -4 -1 -1 0 1 2
         for (List<Integer> array : print) {
             for (Integer i : array) {

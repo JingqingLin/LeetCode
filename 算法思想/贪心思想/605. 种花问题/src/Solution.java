@@ -7,9 +7,8 @@ public class Solution {
         if (len == 1) {
             if (n == 0) {
                 return true;
-            }
-            else if (n == 1) {
-                return flowerbed[0]==0;
+            } else if (n == 1) {
+                return flowerbed[0] == 0;
             }
             return false;
         }
@@ -22,8 +21,8 @@ public class Solution {
         if (cnt >= n) {
             return true;
         }
-        for (int i = 1; i < len-1; i++) {
-            if (flowerbed[i-1] == 0 && flowerbed[i] == 0 && flowerbed[i+1] == 0) {
+        for (int i = 1; i < len - 1; i++) {
+            if (flowerbed[i - 1] == 0 && flowerbed[i] == 0 && flowerbed[i + 1] == 0) {
                 flowerbed[i] = 1;
                 cnt++;
                 i++;
@@ -32,12 +31,13 @@ public class Solution {
                 return true;
             }
         }
-        if (flowerbed[len-2] == 0 && flowerbed[len-1] == 0) {
+        if (flowerbed[len - 2] == 0 && flowerbed[len - 1] == 0) {
             cnt++;
         }
         return cnt >= n;
     }
+
     public static void main(String[] args) {
-        System.out.println(canPlaceFlowers(new int[]{1},0));
+        System.out.println(canPlaceFlowers(new int[]{1}, 0));
     }
 }

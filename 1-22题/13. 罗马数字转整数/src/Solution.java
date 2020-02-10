@@ -41,20 +41,20 @@ public class Solution {
 
         for (int i = 0; i < s.length(); i++) {
             String temp = "";
-            if (i < s.length()-1) {
+            if (i < s.length() - 1) {
                 temp = s.substring(i, i + 2);
             }
             if (romanMap.get(temp) != null) {
                 result += romanMap.get(temp);
                 i++;
-            }
-            else {
+            } else {
                 result += romanMap.get(String.valueOf(s.charAt(i)));
             }
         }
         return result;
     }
-    public static void main(String []args) {
+
+    public static void main(String[] args) {
         System.out.println(romanToInt("MCMXCIV"));
     }
 }

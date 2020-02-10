@@ -12,13 +12,13 @@ public class Solution {
             }
             if (m > div) {
                 r = m - 1;
-            }
-            else {
+            } else {
                 l = m + 1;
             }
         }
         return l - 1;
     }
+
     public static void main(String[] args) {
         System.out.println(mySqrt(2));
     }

@@ -6,11 +6,9 @@ public class Solution {
             int m = l + (r - l) / 2;
             if (nums[m] > nums[r]) {
                 l = m + 1;
-            }
-            else if (nums[m] < nums[r]) {
+            } else if (nums[m] < nums[r]) {
                 r = m;
-            }
-            else {
+            } else {
                 r--;
             }
         }

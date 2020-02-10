@@ -1,11 +1,6 @@
 import java.util.HashMap;
 
 public class Solution {
-    public static class ListNode {
-       int val;
-       ListNode next;
-       ListNode(int x) { val = x; }
-    }
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         HashMap<Integer, ListNode> nodeHashMap = new HashMap<>();
         ListNode temp = head;
@@ -19,13 +14,13 @@ public class Solution {
         // 若为第一个节点
         if (n == i - 1) {
             head = head.next;
-        }
-        else {
+        } else {
             nodeHashMap.get(i - 1 - n).next = nodeHashMap.get(i + 1 - n);
         }
         return head;
     }
-    public static void main(String []args) {
+
+    public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
 //        l1.next = new ListNode(2);
 //        l1.next.next = new ListNode(3);
@@ -35,6 +30,15 @@ public class Solution {
         while (lSum != null) {
             System.out.println(lSum.val);
             lSum = lSum.next;
+        }
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
         }
     }
 }

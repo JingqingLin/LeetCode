@@ -11,7 +11,7 @@ public class Solution {
                 result = temp;
             }
 
-            if (i+1 < s.length() && s.charAt(i) == s.charAt(i+1)) {
+            if (i + 1 < s.length() && s.charAt(i) == s.charAt(i + 1)) {
                 temp1 = isPalindrome(i, i + 1, s);
                 if (maxLen < temp1.length()) {
                     maxLen = temp1.length();
@@ -22,16 +22,17 @@ public class Solution {
         }
         return result;
     }
+
     private static String isPalindrome(int start, int end, String s) {
-        if (start-1 >=0 && end+1 <= s.length()-1 && s.charAt(start-1) == s.charAt(end+1)) {
+        if (start - 1 >= 0 && end + 1 <= s.length() - 1 && s.charAt(start - 1) == s.charAt(end + 1)) {
             return isPalindrome(start - 1, end + 1, s);
-        }
-        else {
-            System.out.printf("回文子串: %s\n", s.substring(start,end + 1));
-            return s.substring(start,end + 1);
+        } else {
+            System.out.printf("回文子串: %s\n", s.substring(start, end + 1));
+            return s.substring(start, end + 1);
         }
     }
-    public static void main(String []args) {
+
+    public static void main(String[] args) {
         String a = "bb";
         System.out.println(longestPalindrome(a));
     }

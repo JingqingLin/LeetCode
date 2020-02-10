@@ -9,14 +9,14 @@ public class Solution {
             if (m % 2 == 0 && nums[m] == nums[m + 1] ||
                     m % 2 != 0 && nums[m] != nums[m + 1]) {
                 l = m + 1;
-            }
-            else {
+            } else {
                 r = m;
             }
         }
         return nums[l];
     }
+
     public static void main(String[] args) {
-        System.out.println(singleNonDuplicate(new int[]{1,1,3,3,4}));
+        System.out.println(singleNonDuplicate(new int[]{1, 1, 3, 3, 4}));
     }
 }
