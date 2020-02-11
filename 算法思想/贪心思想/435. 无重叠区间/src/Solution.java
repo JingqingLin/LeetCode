@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
 
 // 从终点的贪心
 public class Solution {
@@ -17,11 +18,9 @@ public class Solution {
         for (int i = 1; i < intervals.length; i++) {
             if (intervals[i][0] < rightEnd) {
                 continue;
-            } else {
-                if (intervals[i][0] >= rightEnd) {
-                    rightEnd = intervals[i][1];
-                    num++;
-                }
+            } else if (intervals[i][0] >= rightEnd) {
+                rightEnd = intervals[i][1];
+                num++;
             }
         }
         return intervals.length - num;
