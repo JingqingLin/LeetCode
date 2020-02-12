@@ -1,33 +1,27 @@
-public class Solution {
-    private static int m, n;
+import java.util.LinkedList;
+import java.util.Queue;
 
+public class BFS {
     public static int findCircleNum(int[][] M) {
-        m = M.length;
-        n = m == 0 ? 0 : M[0].length;
-        if (m != n) {
-            return 0;
-        }
-        if (m == 1) {
-            return 1;
-        }
+        boolean[] isVisited = new boolean[M.length];
+        Queue<Integer> queue = new LinkedList<>();
         int cnt = 0;
-        for (int i = 0; i < m; i++) {
-            cnt += isFriend(M, i);
-        }
-        return cnt;
-    }
-
-    private static int isFriend(int[][] grid, int x) {
-        int flag = 0;
-        for (int j = 0; j < n; j++) {
-            if (grid[x][j] == 1) {
-                grid[x][j] = 0;
-                grid[j][x] = 0;
-                isFriend(grid, j);
-                flag = 1;
+        for (int i = 0; i < M.length; i++) {
+            if (!isVisited[i]) {
+                queue.offer(i);
+                while (!queue.isEmpty()) {
+                    int s = queue.poll();
+                    isVisited[s] = true;
+                    for (int j = 0; j < M.length; j++) {
+                        if (M[s][j] == 1 && !isVisited[j]) {
+                            queue.offer(j);
+                        }
+                    }
+                }
+                cnt++;
             }
         }
-        return flag;
+        return cnt;
     }
 
     public static void main(String[] args) {
@@ -50,3 +44,4 @@ public class Solution {
                         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}}));
     }
 }
+

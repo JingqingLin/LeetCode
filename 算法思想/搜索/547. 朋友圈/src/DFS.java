@@ -1,33 +1,27 @@
-public class Solution {
-    private static int m, n;
+public class DFS {
+    private static int n;
 
     public static int findCircleNum(int[][] M) {
-        m = M.length;
-        n = m == 0 ? 0 : M[0].length;
-        if (m != n) {
-            return 0;
-        }
-        if (m == 1) {
-            return 1;
-        }
-        int cnt = 0;
-        for (int i = 0; i < m; i++) {
-            cnt += isFriend(M, i);
-        }
-        return cnt;
-    }
-
-    private static int isFriend(int[][] grid, int x) {
-        int flag = 0;
-        for (int j = 0; j < n; j++) {
-            if (grid[x][j] == 1) {
-                grid[x][j] = 0;
-                grid[j][x] = 0;
-                isFriend(grid, j);
-                flag = 1;
+        n = M.length;
+        int circleNum = 0;
+        boolean[] hasVisited = new boolean[n];
+        for (int i = 0; i < n; i++) {
+            // 与我最初的代码相比，在这里有了速度的提升
+            if (!hasVisited[i]) {
+                isFriend(M, i, hasVisited);
+                circleNum++;
             }
         }
-        return flag;
+        return circleNum;
+    }
+
+    private static void isFriend(int[][] M, int i, boolean[] hasVisited) {
+        hasVisited[i] = true;
+        for (int k = 0; k < n; k++) {
+            if (M[i][k] == 1 && !hasVisited[k]) {
+                isFriend(M, k, hasVisited);
+            }
+        }
     }
 
     public static void main(String[] args) {
