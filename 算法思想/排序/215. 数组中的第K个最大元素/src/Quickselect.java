@@ -24,7 +24,7 @@ public class Quickselect {
         nums[j] = tmp;
     }
 
-    // 返回 pivot 下标 */
+    /** 返回 pivot 下标 */
     private static int randPrtition(int[] nums, int l, int r) {
         Random rand = new Random();
         int p = rand.nextInt(r - l + 1) + l;

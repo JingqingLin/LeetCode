@@ -14,11 +14,9 @@ public class Solution {
             combineList.add(new ArrayList<>(combine));
             return;
         }
-        for (int i = cursorPos; i <= n; i++) {
-            // 剪枝
-            if (i > n - k + 1) {
-                break;
-            }
+        // i <= n - k + 1 剪枝
+        for (int i = cursorPos; i <= n && i <= n - k + 1; i++) {
+            // combine 用栈存储也可以，退出递归时只要直接 pop() 就行了
             combine.add(i);
             generateCombination(combineList, combine, i + 1, n, k - 1);
             combine.remove(combine.size() - 1);
