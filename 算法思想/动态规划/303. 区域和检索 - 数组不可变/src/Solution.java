@@ -1,4 +1,9 @@
 public class Solution {
+    public static void main(String[] args) {
+        NumArray obj = new NumArray(new int[]{-2, 0, 3, -5, 2, -1});
+        System.out.println(obj.sumRange(0, 5));
+    }
+
     static class NumArray {
         int[] sum;
 
@@ -19,10 +24,5 @@ public class Solution {
             }
             return sum[j] - sum[i - 1];
         }
-    }
-
-    public static void main(String[] args) {
-        NumArray obj = new NumArray(new int[]{-2, 0, 3, -5, 2, -1});
-        System.out.println(obj.sumRange(0, 5));
     }
 }

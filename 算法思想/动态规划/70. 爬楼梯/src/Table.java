@@ -1,5 +1,7 @@
 public class Table {
-    /** 从返回类型可知最大值为 2 ^ 31 - 1，可用查表法 */
+    /**
+     * 从返回类型可知最大值为 2 ^ 31 - 1，可用查表法
+     */
     public static int climbStairs(int n) {
         int result = 0;
         switch (n) {
