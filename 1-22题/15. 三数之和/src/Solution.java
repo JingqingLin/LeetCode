@@ -16,13 +16,8 @@ public class Solution {
             }
             int l = i + 1, r = nums.length - 1;
             while (l < r) {
-
-                List<Integer> temp = new ArrayList<>();
                 if (nums[i] + nums[l] + nums[r] == 0) {
-                    temp.add(nums[i]);
-                    temp.add(nums[l]);
-                    temp.add(nums[r]);
-                    result.add(temp);
+                    result.add(Arrays.asList(nums[i], nums[l], nums[r]));
                     if (nums[l] == nums[r]) {
                         break;
                     } else {
