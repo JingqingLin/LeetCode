@@ -15,7 +15,7 @@ public class UnionFind {
     static void union(int[] parent, int x, int y) {
         int xset = find(parent, x);
         int yset = find(parent, y);
-        // 若根结点不相同，则让 x 作为 y 的父结点，这样他们就指向相同的根结点了
+        // 若根结点不相同，则让 x 集合的根结点指向 y 集合的根结点，这样他们就指向相同的根结点了
         if (xset != yset) {
             parent[xset] = yset;
         }
