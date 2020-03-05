@@ -71,3 +71,27 @@
         return half * half;
     }
 
+# 面试题18. 删除链表的节点
+剑指 Offer 原题更值得思考：  
+https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/solution/cong-on-dao-o1-by-ml-zimingmeng/
+
+# ⭐[面试题26](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/). 树的子结构
+> ❌我的思路：先序和中序遍历两颗树输出到字符串，再根据字符串是否有包含关系判断。这是错误的：  
+> <img src="https://cdn.jsdelivr.net/gh/JingqingLin/ImageHosting/img/20200303155419.png" width="50%"/>  
+> 由于有结点 3 的存在，无法通过
+
+因此，用 DFS 可实现（与之前的 DFS 略有不同）。在主方法内比较 B 的根结点和 A 的每一个结点：`return isSubStructureWithRoot(A.left, B.left) && isSubStructureWithRoot(A.right, B.right);`  
+若结点的值相同，则进一步在 DFS 方法内继续递归：`return isSubStructureWithRoot(A.left, B.left) && isSubStructureWithRoot(A.right, B.right);`
+
+# [面试题31](https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/). 栈的压入、弹出序列
+> 我的思路（比较复杂，要考虑很多细节）：利用双指针记录两个数组的位置，模拟出栈、入栈操作。入栈时，`pushed` 数组指针向前移动；出栈时，`poped` 数组指针向前移动。当记录 `pushed` 的指针到达尾部时，判断栈是否为空
+
+    // 下面的代码思路和我相似，且不复杂
+    for (int pushIndex = 0, popIndex = 0; pushIndex < n; pushIndex++) {
+        stack.push(pushed[pushIndex]);
+        while (popIndex < n && !stack.isEmpty()
+                && stack.peek() == popped[popIndex]) {
+            stack.pop();
+            popIndex++;
+        }
+    }

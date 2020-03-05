@@ -1,12 +1,15 @@
 import java.util.Arrays;
 
 public class Solution {
-    private static boolean[][] rowsUsed = new boolean[9][10];
-    private static boolean[][] colsUsed = new boolean[9][10];
-    private static boolean[][] cubesUsed = new boolean[9][10];
+    private static boolean[][] rowsUsed;
+    private static boolean[][] colsUsed;
+    private static boolean[][] cubesUsed;
     private static char[][] board;
 
     public static void solveSudoku(char[][] board) {
+    	rowsUsed = new boolean[9][10];
+        colsUsed = new boolean[9][10];
+        cubesUsed = new boolean[9][10];
         Solution.board = board;
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
