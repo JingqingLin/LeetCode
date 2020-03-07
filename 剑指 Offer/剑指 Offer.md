@@ -95,3 +95,31 @@ https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/solution/co
             popIndex++;
         }
     }
+
+
+# [面试题57 - II](https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/). 和为s的连续正数序列
+```
+输入：target = 9        输入：target = 15
+输出：[[2,3,4],[4,5]]   输出：[[1,2,3,4,5],[4,5,6],[7,8]]
+```
+> 我的思路：计算出 1 ~ i (i <= target / 2 + 1) 的和，并存入哈希表，只需在哈希表中寻找 key == sum - target 是否存在
+
+## 滑动窗口
+- `sum < target` 右指针增加  
+- `sum > target` 左指针增加
+- 输出，并使左指针加 2
+
+当然也有求根法：$\frac{(x+y) *(y-x+1)}{2} = target$ 等其他方法。  
+https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/solution/java-shuang-100-by-vapormax/
+
+# ⭐[面试题59 - II](https://leetcode-cn.com/problems/dui-lie-de-zui-da-zhi-lcof/). 队列的最大值
+思路巧妙
+
+要想在 $O(1)$ 时间内做到取出最大值，我们可以想到，能否用一个 `cur_max` 的变量，来记录并且比较每一次新入队的 `value`，但当调用一次 `pop_front()` 后，最大值可能会发生变化，所以行不通。  
+进一步地想到，一个变量不行，那直接用一个辅助队列来记录最大值。  
+如果我们向队列中插入数字序列 `1 1 1 1 2`，那么在第一个数字 2 被插入后，数字 2 前面的所有数字 1 将不会对结果产生影响。因为数字 2 只能在所有的数字 1 被取出之后才能被取出，因此如果数字 1 如果在队列中，那么数字 2 必然也在队列中，使得数字 1 对结果没有影响。
+
+因此，**辅助队列设计思路**为：
+- 从队尾插入元素时，我们可以提前取出辅助队列中所有比这个元素小的元素，使得辅助队列中只保留对结果有影响的数字。
+  - 注意点：应从辅助队列尾部循环取出。原因：当原始队列为 `3 1` 时，辅助队列也为 `3 1` ，此时插入 `2`，原始队列为 `3 1 2`。若从辅助队头取出，则 `1` 仍留在队中，但实际上 `1` 对最大值没有影响；若从尾部取出，`1` 会被取出
+- 从队头取出元素时，若辅助队列队头和原始队列队头相等，则辅助队列也要取出元素
