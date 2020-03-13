@@ -28,49 +28,51 @@
 
 # ⭐⭐[面试题16](https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/). 数值的整数次方
 > 第一眼看感觉思路简单。写出了以下代码：
-
-    public static double myPow(double x, int n) {
-        // 防止最小负数取绝对值后溢出
-        long N = n;
-        N = Math.abs(N);
-        x = n > 0 ? x : 1 / x;
-        double res = 1;
-        while (--N >= 0) {
-            res = res * x;
-        }
-        return res;
+```Java
+public static double myPow(double x, intn) {
+    // 防止最小负数取绝对值后溢出
+    long N = n;
+    N = Math.abs(N);
+    x = n > 0 ? x : 1 / x;
+    double res = 1;
+    while (--N >= 0) {
+        res = res * x;
     }
+    return res;
+}
+```
 ## 快速幂思想（迭代和递归都可）
 > 但以下测试用例超时 `1.00000 2147483647`，所以修改代码：
-
-    public static double myPow(double x, int n) {
-        long N = n;
-        N = Math.abs(N);
-        x = n > 0 ? x : 1 / x;
-        double res = 1;
-        while (N >= 1) {
-            if (N % 2 == 1) {
-                res = res * x;
-            }
-            x = x * x;
-            N = N / 2;
+```Java
+public static double myPow(double x, intn) {
+    long N = n;
+    N = Math.abs(N);
+    x = n > 0 ? x : 1 / x;
+    double res = 1;
+    while (N >= 1) {
+        if (N % 2 == 1) {
+            res = res * x;
         }
-        return res;
+        x = x * x;
+        N = N / 2;
     }
+    return res;
+}
+```
 每当 $n$ 为奇数时，将多出的一项 `x` 乘入 `res`，所以 `res` 内存的是多出来的次方，最后当 $n == 1$ 时，将累积的 `x` 乘入 `res`  
 **递归**方式更直观：
-
-    public static double fastpow(double x, long n) {
-        if (n == 0) {
-            return 1.0;
-        }
-        double half = fastpow(x, n / 2);
-        if (n % 2 == 1) {
-            return x * half * half;
-        }
-        return half * half;
+```Java
+public static double fastpow(double x,long n) {
+    if (n == 0) {
+        return 1.0;
     }
-
+    double half = fastpow(x, n / 2);
+    if (n % 2 == 1) {
+        return x * half * half;
+    }
+    return half * half;
+}
+```
 # 面试题18. 删除链表的节点
 剑指 Offer 原题更值得思考：  
 https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/solution/cong-on-dao-o1-by-ml-zimingmeng/
@@ -85,17 +87,17 @@ https://leetcode-cn.com/problems/shan-chu-lian-biao-de-jie-dian-lcof/solution/co
 
 # [面试题31](https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/). 栈的压入、弹出序列
 > 我的思路（比较复杂，要考虑很多细节）：利用双指针记录两个数组的位置，模拟出栈、入栈操作。入栈时，`pushed` 数组指针向前移动；出栈时，`poped` 数组指针向前移动。当记录 `pushed` 的指针到达尾部时，判断栈是否为空
-
-    // 下面的代码思路和我相似，且不复杂
-    for (int pushIndex = 0, popIndex = 0; pushIndex < n; pushIndex++) {
-        stack.push(pushed[pushIndex]);
-        while (popIndex < n && !stack.isEmpty()
-                && stack.peek() == popped[popIndex]) {
-            stack.pop();
-            popIndex++;
-        }
+```Java
+// 下面的代码思路和我相似，且不复杂
+for (int pushIndex = 0, popIndex = 0;pushIndex < n; pushIndex++) {
+    stack.push(pushed[pushIndex]);
+    while (popIndex < n && !stack.isEmpty()
+            && stack.peek() == popped[popIndex]) {
+        stack.pop();
+        popIndex++;
     }
-
+}
+```
 
 # [面试题57 - II](https://leetcode-cn.com/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/). 和为s的连续正数序列
 ```
