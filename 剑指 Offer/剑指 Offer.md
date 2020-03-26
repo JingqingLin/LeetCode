@@ -20,8 +20,10 @@
 <img src="https://cdn.jsdelivr.net/gh/JingqingLin/ImageHosting/img/60c4a44c-7829-4242-b3a1-26c3b513aaf0.gif" width="430px"/>
 
 # 面试题09. 用两个栈实现队列
+思路：栈 A `push`，栈 B `pop`，B 和 A 的方向相反，因此能 `pop` 出 head
+
 > 摘自力扣：  
-> 使用java的同学请注意，如果你使用Stack的方式来做这道题，会造成速度较慢； 这个原因的话是因为Stack继承了Vector接口，而Vector底层是AbstractList，是一个数组，那么就要考虑空间扩容的问题了。 可以使用LinkedList来做Stack的容器，因为LinkedList实现了Deque接口，所以Stack能做的事LinkedList都能做，其本身结构是个链表，扩容消耗少。 但是我的意思不是像100%代码那样直接使用一个List当做队列，那确实是快=，但是不符题意。 贴上代码，这样的优化之后，效率提高了40%，超过97%。
+> 使用 Java 的同学请注意，如果你使用 Stack 的方式来做这道题，会造成速度较慢；这个原因的话是因为 Stack 继承了 Vector 接口，而 Vector 底层是 AbstractList，是一个数组，那么就要考虑空间扩容的问题了。可以使用 LinkedList 来做 Stack 的容器，因为 LinkedList 实现了 Deque 接口，所以 Stack 能做的事 LinkedList 都能做，其本身结构是个链表，扩容消耗少。但是我的意思不是像 100% 代码那样直接使用一个 List 当做队列，那确实是快，但是不符题意。贴上代码，这样的优化之后，效率提高了 40%，超过 97%。
 
 # [面试题15](https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof/). 二进制中1的个数
 > `>>>` 代表无符号右移，最高位补 0，`>>` 代表有符号右移，正数高位补 0，负数补 1
@@ -29,7 +31,7 @@
 # ⭐⭐[面试题16](https://leetcode-cn.com/problems/shu-zhi-de-zheng-shu-ci-fang-lcof/). 数值的整数次方
 > 第一眼看感觉思路简单。写出了以下代码：
 ```Java
-public static double myPow(double x, intn) {
+public static double myPow(double x, int n) {
     // 防止最小负数取绝对值后溢出
     long N = n;
     N = Math.abs(N);
@@ -44,7 +46,7 @@ public static double myPow(double x, intn) {
 ## 快速幂思想（迭代和递归都可）
 > 但以下测试用例超时 `1.00000 2147483647`，所以修改代码：
 ```Java
-public static double myPow(double x, intn) {
+public static double myPow(double x, int n) {
     long N = n;
     N = Math.abs(N);
     x = n > 0 ? x : 1 / x;
