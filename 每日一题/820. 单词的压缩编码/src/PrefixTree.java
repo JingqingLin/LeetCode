@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class PrefixTree {
     static class Trie {
@@ -9,6 +10,7 @@ public class PrefixTree {
         }
 
         public int insert(String word) {
+            // 根结点为空
             TrieNode cur = root;
             boolean isNew = false;
             // 倒着插入单词
@@ -34,12 +36,16 @@ public class PrefixTree {
         }
     }
 
-
     public static int minimumLengthEncoding(String[] words) {
         int len = 0;
         Trie trie = new Trie();
         // 先对单词列表根据单词长度由长到短排序
-        Arrays.sort(words, (s1, s2) -> s2.length() - s1.length());
+        Arrays.sort(words, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o2.length() - o1.length();
+            }
+        });
         // 单词插入 trie，返回该单词增加的编码长度
         for (String word : words) {
             len += trie.insert(word);

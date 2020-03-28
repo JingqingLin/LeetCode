@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Solution {
+public class SortedByLength2 {
     public static int minimumLengthEncoding(String[] words) {
         Arrays.sort(words, new Comparator<String>() {
             @Override
