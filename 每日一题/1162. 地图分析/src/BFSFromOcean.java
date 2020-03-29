@@ -1,10 +1,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * 和“腐烂的橘子”差不多
- */
-public class Solution {
+public class BFSFromOcean {
     private static int[][] grid;
     private static int n;
     private static int[][] direction;
@@ -12,7 +9,7 @@ public class Solution {
     public static int maxDistance(int[][] grid) {
         int maxDistance = -1;
         n = grid.length;
-        Solution.grid = grid;
+        BFSFromOcean.grid = grid;
         direction = new int[][]{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
