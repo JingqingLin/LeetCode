@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class Solution {
     public static int numSquares(int n) {
@@ -32,7 +35,7 @@ public class Solution {
         List<Integer> squares = new ArrayList<>();
         int i = 1;
         while (i * i <= n) {
-            squares.add(0,i * i);
+            squares.add(0, i * i);
             i++;
         }
         return squares;

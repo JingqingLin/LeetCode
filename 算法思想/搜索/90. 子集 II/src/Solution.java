@@ -14,7 +14,9 @@ public class Solution {
         return subsetList;
     }
 
-    /** 去重：若 nums[i] == nums[i - 1]，则仅对上一轮加入的元素进行添加 */
+    /**
+     * 去重：若 nums[i] == nums[i - 1]，则仅对上一轮加入的元素进行添加
+     */
     private static void generateSubset(List<List<Integer>> subsetList, int[] nums,
                                        int numsCursor, int listCursor) {
         int i = listCursor;

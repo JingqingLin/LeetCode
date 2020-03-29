@@ -3,8 +3,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
-    /** 最好先创建一个 char[][]，并在此放置皇后，当 n == row 时，直接加入 char[]
-     * 否则全部操作都在 n == row 时进行，会很慢 */
+    /**
+     * 最好先创建一个 char[][]，并在此放置皇后，当 n == row 时，直接加入 char[]
+     * 否则全部操作都在 n == row 时进行，会很慢
+     */
     private static char[][] nQueens;
     private static boolean[] columnUsed;
     private static boolean[] topLeftUsed;

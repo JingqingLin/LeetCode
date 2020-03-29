@@ -2,15 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     public static List<String> binaryTreePaths(TreeNode root) {
         List<String> pathList = new ArrayList<>();
         dfs(pathList, new StringBuilder(), root);
@@ -43,5 +34,15 @@ public class Solution {
         root.right = new TreeNode(3);
         root.left.right = new TreeNode(5);
         System.out.println(binaryTreePaths(root));
+    }
+
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 }

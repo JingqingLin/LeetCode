@@ -7,7 +7,7 @@ public class Solution {
     private static char[][] board;
 
     public static void solveSudoku(char[][] board) {
-    	rowsUsed = new boolean[9][10];
+        rowsUsed = new boolean[9][10];
         colsUsed = new boolean[9][10];
         cubesUsed = new boolean[9][10];
         Solution.board = board;

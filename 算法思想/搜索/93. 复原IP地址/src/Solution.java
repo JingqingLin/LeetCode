@@ -8,7 +8,9 @@ public class Solution {
         return ipList;
     }
 
-    /** 可不用 cursorPos 这个参数。直接 s.subString(i + 1) 作为 s 参数 */
+    /**
+     * 可不用 cursorPos 这个参数。直接 s.subString(i + 1) 作为 s 参数
+     */
     private static void ipCombination(List<String> ipList, List<Integer> dotPos, int cursorPos, String s) {
         if (dotPos.size() == 4) {
             if (s.length() == cursorPos) {

@@ -1,6 +1,6 @@
 public class Solution {
-    private static int m, n;
     private final static int[][] direction = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+    private static int m, n;
     private static boolean flag;
 
     public static boolean exist(char[][] board, String word) {
@@ -41,7 +41,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        char[][] board = new char[][]{{'F','B','C','E'},{'S','F','C','S'}};
+        char[][] board = new char[][]{{'F', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}};
         System.out.println(exist(board, "FBCC"));
     }
 }

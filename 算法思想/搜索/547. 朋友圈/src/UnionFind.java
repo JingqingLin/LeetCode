@@ -1,7 +1,9 @@
 import java.util.Arrays;
 
 public class UnionFind {
-    /** 查找并返回根结点编号 */
+    /**
+     * 查找并返回根结点编号
+     */
     static int find(int[] parent, int i) {
         // 如果是根结点，则返回根结点编号
         if (parent[i] == -1) {
@@ -11,7 +13,9 @@ public class UnionFind {
         return find(parent, parent[i]);
     }
 
-    /** 合并 */
+    /**
+     * 合并
+     */
     static void union(int[] parent, int x, int y) {
         int xset = find(parent, x);
         int yset = find(parent, y);
