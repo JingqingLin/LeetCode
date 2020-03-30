@@ -1,29 +1,27 @@
 public class Solution {
-    private static int m, n;
+    private static int n;
+    private static int[][] M;
 
     public static int findCircleNum(int[][] M) {
-        m = M.length;
-        n = m == 0 ? 0 : M[0].length;
-        if (m != n) {
-            return 0;
-        }
-        if (m == 1) {
+        n = M.length;
+        Solution.M = M;
+        if (n == 1) {
             return 1;
         }
         int cnt = 0;
-        for (int i = 0; i < m; i++) {
-            cnt += isFriend(M, i);
+        for (int i = 0; i < n; i++) {
+            cnt += isFriend(i);
         }
         return cnt;
     }
 
-    private static int isFriend(int[][] grid, int x) {
+    private static int isFriend(int i) {
         int flag = 0;
         for (int j = 0; j < n; j++) {
-            if (grid[x][j] == 1) {
-                grid[x][j] = 0;
-                grid[j][x] = 0;
-                isFriend(grid, j);
+            if (M[i][j] == 1) {
+                M[i][j] = 0;
+                M[j][i] = 0;
+                isFriend(j);
                 flag = 1;
             }
         }
