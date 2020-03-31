@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Quickselect {
+public class QuickSelect {
     public static int findKthLargest(int[] nums, int k) {
         k = nums.length - k;
         int l = 0, r = nums.length - 1;
@@ -45,6 +45,7 @@ public class Quickselect {
             nums[r] = nums[l];
         }
         // l r 相遇，pivot 存到 nums[l]
+        // 交换和替换的步骤经常会遗忘
         nums[l] = pivot;
         return l;
     }
