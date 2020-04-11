@@ -15,11 +15,11 @@ public class OptimizedDynamicProgramming {
                 int low = 2, high = j;
                 while (low < high) {
                     int m = low + (high - low) / 2;
-                    // A 递增，B 递减
-                    int A = dp[i - 1][m - 1], B = dp[i][j - m];
-                    if (A > B) {
+                    // y1 递增，y2 递减
+                    int y1 = dp[i - 1][m - 1], y2 = dp[i][j - m];
+                    if (y1 > y2) {
                         high = m - 1;
-                    } else if (A < B) {
+                    } else if (y1 < y2) {
                         low = m + 1;
                     } else {
                         low = high = m;
