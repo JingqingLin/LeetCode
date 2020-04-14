@@ -10,16 +10,17 @@ public class DoubleNode {
     }
 
     public static ListNode reverseList(ListNode head) {
-        ListNode temp = null;
+        ListNode pre = null;
 
         while (head != null) {
-            temp = head.next;
-            head.next = head.prev;
-            head.prev = temp;
+            ListNode temp = head.next;
+            head.prev = head.next;
+            head.next = pre;
+            pre = head;
             head = temp;
         }
 
-        return head;
+        return pre;
     }
 
     public static void main(String[] args) {
