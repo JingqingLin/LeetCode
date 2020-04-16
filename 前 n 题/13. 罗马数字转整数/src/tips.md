@@ -4,7 +4,7 @@
 这个方法 `map.containsKey` 值得借鉴
 
 ```Java
-class Solution {
+class BruteForce {
     public int romanToInt(String s) {
         Map<String, Integer> map = new HashMap<>();
         map.put("I", 1);
