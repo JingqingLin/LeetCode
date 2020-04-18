@@ -1,28 +1,86 @@
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Solution {
     static class LFUCache {
-        private int capacity;
-        private HashMap<Integer, Integer> cache;
-        private HashMap<Integer, Integer> visitCount;
-        private PriorityQueue<Integer> pq;
+
+        Map<Integer, Node> cache;
+        Queue<Node> queue;
+        int capacity;
+        int size;
+        int globalTime = 0;
 
         public LFUCache(int capacity) {
+            cache = new HashMap<>(capacity);
+            if (capacity > 0) {
+                queue = new PriorityQueue<>(capacity);
+            }
             this.capacity = capacity;
-            cache = new HashMap<>();
-            visitCount = new HashMap<>();
-            pq = new PriorityQueue<>((o1, o2) -> visitCount.get(o1) - visitCount.get(o2));
         }
 
         public int get(int key) {
-            return 1;
+            Node node = cache.get(key);
+            if (node == null) {
+                return -1;
+            }
+            node.frequency++;
+            node.globalTime = globalTime++;
+            queue.remove(node);
+            queue.offer(node);
+            return node.value;
+
         }
 
         public void put(int key, int value) {
-            cache.put(key, value);
+            if (capacity == 0) {
+                return;
+            }
+            Node node = cache.get(key);
+            if (node != null) {
+                node.value = value;
+                node.frequency++;
+                node.globalTime = globalTime++;
+                queue.remove(node);
+                queue.offer(node);
+            } else {
+                if (size == capacity) {
+                    cache.remove(queue.peek().key);
+                    queue.poll();
+                    size--;
+                }
+                Node newNode = new Node(key, value, globalTime++);
+                cache.put(key, newNode);
+                queue.offer(newNode);
+                size++;
+            }
+        }
+    }
+
+    /**
+     * 一个类实现了 Comparable 接口，就意味着“该类支持排序”
+     */
+    private static class Node implements Comparable<Node> {
+        int key;
+        int value;
+        int frequency;
+        int globalTime;
+
+        public Node() {
+        }
+
+        public Node(int key, int value, int globalTime) {
+            this.key = key;
+            this.value = value;
+            frequency = 1;
+            this.globalTime = globalTime;
+        }
+
+        @Override
+        public int compareTo(Node node) {
+            int diff = frequency - node.frequency;
+            return diff != 0 ? diff : globalTime - node.globalTime;
         }
     }
 
