@@ -2,15 +2,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class BruteForce {
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public static ListNode mergeKLists(ListNode[] lists) {
         // 所有结点存到链表
         ArrayList<Integer> allNodes = new ArrayList<>();
@@ -39,5 +30,14 @@ public class BruteForce {
 
     public static void main(String[] args) {
 
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

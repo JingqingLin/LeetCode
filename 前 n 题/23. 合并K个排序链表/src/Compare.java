@@ -1,13 +1,4 @@
 public class Compare {
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public static ListNode mergeKLists(ListNode[] lists) {
         int k = lists.length;
         ListNode retList = null;
@@ -43,5 +34,14 @@ public class Compare {
 
     public static void main(String[] args) {
 
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }
